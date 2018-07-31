@@ -5,7 +5,7 @@ import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static INTRODUCTION_TO_ALGORITHMS.Sort.insert;
+import static INTRODUCTION_TO_ALGORITHMS.InsertSort.insert;
 
 public class SortTest {
 	private int[] array = {3, 5, 2, 8, 1};
