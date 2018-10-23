@@ -8,7 +8,7 @@ public class InsertSort {
 		// Worst : O(n^2)
 	// Space Complexity :
 		// Worst : O(1)
-	public static int[] insert(int[] array){
+	public static int[] sort(int[] array){
 		for(int index=1; index<array.length; index++){
 			int save = array[index];
 			int targetIndex = index - 1;
