@@ -23,7 +23,7 @@ public class longest_substring_without_repeating_characters {
 				length++;
 			}
 
-			longestLength = longestLength > length ? longestLength : length;
+			longestLength = Math.max(longestLength, length);
 		}
 
 
