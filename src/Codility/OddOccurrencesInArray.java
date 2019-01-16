@@ -17,6 +17,7 @@ public class OddOccurrencesInArray {
 			if(ans.contains(itemObject)){
 				ans.remove(itemObject);
 			}else{
+				// Edge Case : 지속적으로 add하면 HashSet의 충돌현상으로 확장하는데 시간이 소요
 				ans.add(itemObject);
 			}
 		}
