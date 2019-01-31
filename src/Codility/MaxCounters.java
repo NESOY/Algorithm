@@ -1,6 +1,8 @@
 package Codility;
 
 public class MaxCounters {
+	// new Cost 최대한 피하기
+	// 최대한 중복 로직 제거하기
 	// first
 	// correct : 100, Performance : 60
 	public int[] solution(int N, int[] A) {
