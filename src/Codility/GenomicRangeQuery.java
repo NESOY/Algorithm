@@ -1,10 +1,5 @@
 package Codility;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.IntStream;
-
+// Second Ref : https://nachwon.github.io/GenomicRangeQuery/
 // First : correct 100 perform 66
 public class GenomicRangeQuery {
 	// DNA -> A, C, G, T
@@ -12,30 +7,23 @@ public class GenomicRangeQuery {
 	// What is minimal impact factor nucleotides contained in a particular part of the given DNA sequence?
 	// String N, M Queries,
 	public int[] solution(String S, int[] P, int[] Q) {
-		int length = Math.max(P.length, Q.length);
-		int[] ans = new int[length];
+		int[][] prefix = new int[S.length()+1][4];
 		char[] array = S.toCharArray();
+		int[] ans = new int[P.length];
+		int index = 1;
 
-		List<DNAInfo> list = new ArrayList<>();
-		list.add(null);
-		list.add(new DNAInfo(1, S.length()));
-		list.add(new DNAInfo(2, S.length()));
-		list.add(new DNAInfo(3, S.length()));
-		list.add(new DNAInfo(4, S.length()));
+		for(char item : array){
+			prefix[index] = prefix[index-1].clone();
+			prefix[index++][getIndex(item)]++;
+		}
 
-		IntStream.range(0, array.length)
-				.forEach(index -> list.get(getIndex(array[index])).add(index));
+		for(int i=0; i<Math.max(P.length, Q.length); i++) {
+			int from = Q[i];
+			int to = P[i];
 
-		// find ans
-		for(int i=0; i<length; i++){
-			int from = P[i];
-			int to = Q[i];
-
-
-			// sub case
-			for(DNAInfo item : list){
-				if(!Objects.isNull(item) && item.isContain(from, to)) {
-					ans[i] = item.key;
+			for(int j=0; j<4; j++){
+				if(prefix[from+1][j] - prefix[to][j] != 0) {
+					ans[i] = j+1;
 					break;
 				}
 			}
@@ -44,50 +32,18 @@ public class GenomicRangeQuery {
 		return ans;
 	}
 
-	private Integer getIndex(char ch){
+	private int getIndex(char ch){
 		switch (ch){
 			case 'A':
-				return 1;
+				return 0;
 			case 'C':
-				return 2;
+				return 1;
 			case 'G':
-				return 3;
+				return 2;
 			case 'T':
-				return 4;
+				return 3;
 		}
 		return -1;
 	}
 
-}
-class DNAInfo{
-	int key;
-	boolean[] list;
-	int min = 10000000;
-	int max = 0;
-
-	public DNAInfo(int key, int length) {
-		this.key = key;
-		this.list = new boolean[length];
-	}
-
-	public void add(int index){
-		list[index] = true;
-		min = Math.min(index, min);
-		max = Math.max(index, max);
-	}
-
-	public boolean isContain(int from, int to){
-		if(to < min || from > max)
-			return false;
-
-		int newFrom = Math.max(from, min);
-		int newTo = Math.min(to, max);
-
-		for(int i=newFrom; i<=newTo; i++){
-			if(list[i])
-				return true;
-		}
-
-		return false;
-	}
 }
