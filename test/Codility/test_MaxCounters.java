@@ -1,17 +1,16 @@
 package Codility;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.Arrays;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class test_MaxCounters {
 	private MaxCounters solution;
 
-	@Before
+	@BeforeEach
 	public void setUp(){
 		solution = new MaxCounters();
 	}

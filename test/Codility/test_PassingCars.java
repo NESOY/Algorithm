@@ -1,13 +1,14 @@
 package Codility;
 
-import org.junit.Before;
-import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class test_PassingCars {
 	private PassingCars solution;
-	@Before
+	@BeforeEach
 	public void setUp(){
 		solution = new PassingCars();
 	}

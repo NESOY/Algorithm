@@ -1,16 +1,17 @@
 package Programmers;
 
-import org.junit.Before;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertTrue;
 
 public class 영어끝말읽기Test {
 	private 영어끝말읽기 solution;
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		solution = new 영어끝말읽기();
 	}

@@ -1,12 +1,13 @@
 package Programmers;
 
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class 리모트1Test {
 	private 리모트1 solution;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		solution = new 리모트1();
 	}

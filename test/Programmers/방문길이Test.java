@@ -1,16 +1,15 @@
 package Programmers;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
-
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class 방문길이Test {
 	private 방문길이 solution;
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		solution = new 방문길이();
 	}

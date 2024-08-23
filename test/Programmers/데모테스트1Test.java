@@ -1,16 +1,17 @@
 package Programmers;
 
-import org.junit.Before;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertTrue;
 
 public class 데모테스트1Test {
 	private 데모테스트1 solution;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		solution = new 데모테스트1();
 	}

@@ -1,9 +1,9 @@
 package INTRODUCTION_TO_ALGORITHMS;
 
-import java.util.Arrays;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Assert;
-import org.junit.Test;
+import java.util.Arrays;
+import org.junit.jupiter.api.Test;
 
 public class SortTest {
 	private int[] array = {3, 5, 2, 8, 1};
@@ -11,12 +11,12 @@ public class SortTest {
 	@Test
 	public void insertSort(){
 		int[] result = InsertSort.sort(array);
-		Assert.assertTrue(Arrays.equals(expected, result));
+		assertTrue(Arrays.equals(expected, result));
 	}
 
 	@Test
 	public void mergeSort(){
 		int[] result = InsertSort.sort(array);
-		Assert.assertTrue(Arrays.equals(expected, result));
+		assertTrue(Arrays.equals(expected, result));
 	}
 }
